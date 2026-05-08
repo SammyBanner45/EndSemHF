@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { cacheNews, fetchNewsArticles, getCachedNews } from '../services/newsService'
+import { FALLBACK_NEWS_ARTICLES, cacheNews, fetchNewsArticles, getCachedNews } from '../services/newsService'
 
 export function useNews() {
   const [articles, setArticles] = useState(() => getCachedNews() ?? [])
@@ -19,6 +19,8 @@ export function useNews() {
       const cached = getCachedNews()
       if (cached?.length) {
         setArticles(cached)
+      } else {
+        setArticles(FALLBACK_NEWS_ARTICLES)
       }
       setError(requestError.message || 'Unable to load news')
     } finally {

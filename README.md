@@ -44,6 +44,7 @@ A production-ready React + Vite dashboard for live ISS tracking, space news, str
 │   │   └── NewsDistributionChart.jsx
 │   ├── hooks
 │   │   ├── useChat.js
+│   │   ├── useElementSize.js
 │   │   ├── useIssTracker.js
 │   │   ├── useNews.js
 │   │   └── useTheme.js
