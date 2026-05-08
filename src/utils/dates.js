@@ -1,0 +1,16 @@
+export function formatDateTime(value) {
+  if (!value) return 'Unavailable'
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+  }).format(new Date(value))
+}
+
+export function formatTime(value) {
+  if (!value) return 'Waiting'
+  return new Intl.DateTimeFormat(undefined, {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).format(new Date(value))
+}
